@@ -27,19 +27,19 @@ The ETL process is designed to load data into the following tables:
   - Configure the connection and SQL query to select the required data.
   - Example query:
     ```sql
-SELECT 
-    fc.CustomerID, 
-    fc.CustomerName, 
-    fp.ProductID, 
-    fp.ProductName, 
-    fs.QuantitySold, 
-    fp.UnitPrice,
-    ft.Date
-FROM 
-    salesDWH.FactSales fs 
-INNER JOIN salesDWH.DimCustomer fc ON fs.CustomerID = fc.CustomerID
-INNER JOIN salesDWH.DimProduct fp ON fs.ProductID = fp.ProductID
-INNER JOIN salesDWH.DimTime ft ON fs.TimeID = ft.TimeID;
+    SELECT 
+        fc.CustomerID, 
+        fc.CustomerName, 
+        fp.ProductID, 
+        fp.ProductName, 
+        fs.QuantitySold, 
+        fp.UnitPrice,
+        ft.Date
+    FROM 
+        salesDWH.FactSales fs 
+    INNER JOIN salesDWH.DimCustomer fc ON fs.CustomerID = fc.CustomerID
+    INNER JOIN salesDWH.DimProduct fp ON fs.ProductID = fp.ProductID
+    INNER JOIN salesDWH.DimTime ft ON fs.TimeID = ft.TimeID;
     ```
 
 ### 2. Transform Data
